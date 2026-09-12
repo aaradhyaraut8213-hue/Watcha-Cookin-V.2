@@ -89,73 +89,112 @@ class MainActivity : Activity() {
             (function(){
               const detailed={
                 'Paneer Butter Masala':[
-                  'Finely chop the onion, garlic and tomatoes. Keep the paneer ready in bite-sized cubes.',
-                  'Heat butter on medium heat. Add onion and garlic and cook until the onion becomes soft and lightly golden.',
-                  'Add tomatoes and garam masala. Cook until the tomatoes become soft and the mixture looks thick.',
-                  'Blend or mash the cooked tomato mixture until smooth. Add a small splash of water if needed.',
-                  'Lower the heat, stir in cream, then add paneer. Simmer gently for 5–8 minutes so the paneer absorbs the sauce.',
-                  'Taste and adjust seasoning. Garnish with coriander if available and serve hot.'
+                  'Wash the tomatoes and peel the onion and garlic. Chop the onion and tomatoes into small pieces so they cook quickly.',
+                  'Cut the paneer into medium bite-sized cubes. Keep the cubes aside while you prepare the gravy.',
+                  'Heat butter in a pan over medium heat. Add the chopped onion and garlic and sauté until the onion turns soft and lightly golden.',
+                  'Add the chopped tomatoes and cook for 5–7 minutes, stirring occasionally, until they become completely soft.',
+                  'Add garam masala and a little salt. Mix well and cook for another 1–2 minutes so the spices become fragrant.',
+                  'Turn off the heat and let the mixture cool slightly. Blend or mash it until you get a smooth gravy.',
+                  'Return the gravy to the pan. Add a small splash of water if it is too thick and bring it to a gentle simmer.',
+                  'Lower the heat and stir in the cream. Mix slowly until the gravy becomes smooth and creamy.',
+                  'Add the paneer cubes and gently coat them with the gravy. Simmer for 5–8 minutes so the paneer warms through and absorbs the flavour.',
+                  'Taste and adjust salt or garam masala. Garnish with coriander or a little cream if available, then serve hot.'
                 ],
                 'Paneer Tikka':[
-                  'Cut paneer, capsicum and onion into similar-sized pieces so they cook evenly.',
-                  'Mix curd with chilli and garam masala. Coat the paneer and vegetables evenly and let them rest for a few minutes.',
-                  'Heat a non-stick pan or grill on medium-high heat. Lightly grease it if needed.',
-                  'Cook the pieces in a single layer until lightly golden or charred, turning them as needed.',
-                  'Check that the paneer is hot and the vegetables are tender-crisp. Serve immediately.'
+                  'Cut paneer into medium cubes. Cut the onion and capsicum into pieces roughly the same size as the paneer.',
+                  'In a bowl, add curd, chilli powder, garam masala and a little salt. Mix until smooth.',
+                  'Add paneer, onion and capsicum to the marinade and gently toss until every piece is coated.',
+                  'Let the coated pieces rest for at least 10–15 minutes so the flavour gets into the paneer and vegetables.',
+                  'Heat a non-stick pan or grill over medium-high heat. Lightly grease the surface if needed.',
+                  'Place the paneer and vegetables in a single layer. Do not overcrowd the pan because they should brown rather than steam.',
+                  'Cook for 2–3 minutes on one side, then turn the pieces with tongs or a spatula.',
+                  'Continue turning and cooking until the paneer is hot and the edges of the vegetables have light brown or charred spots.',
+                  'Lower the heat if the marinade is browning too quickly. Make sure the vegetables are cooked but still have some bite.',
+                  'Transfer to a plate and serve immediately. Add lemon juice or coriander if available.'
                 ],
                 'Creamy Tomato Pasta':[
-                  'Bring salted water to a boil and cook the pasta until just tender according to the packet timing.',
-                  'Sauté finely chopped garlic over medium heat until fragrant, without letting it burn.',
-                  'Add tomato and cook until it softens and forms a thick sauce.',
-                  'Lower the heat and stir in cream and cheese until smooth.',
-                  'Drain the pasta, keeping a little pasta water. Toss pasta through the sauce and add a splash of water if needed.',
-                  'Taste, adjust seasoning and serve hot.'
+                  'Bring a large pot of water to a boil and add some salt. Keep the water boiling before adding the pasta.',
+                  'Add the pasta and cook according to the packet instructions until tender but not mushy.',
+                  'Before draining, save about half a cup of pasta water. Drain the pasta and keep it aside.',
+                  'Heat a pan over medium heat and add a little oil or butter. Add finely chopped garlic and cook until fragrant.',
+                  'Add the tomato and cook for several minutes until it softens and the mixture starts to look like a sauce.',
+                  'Add the required seasoning and garam masala or herbs if your recipe uses them. Stir everything together.',
+                  'Lower the heat and add cream slowly while stirring continuously so the sauce stays smooth.',
+                  'Add cheese if using and stir until it melts into the sauce. If the sauce becomes too thick, add a little reserved pasta water.',
+                  'Add the drained pasta and toss until every piece is coated. Cook together for 1–2 minutes.',
+                  'Taste and adjust salt and seasoning. Serve hot with extra cheese or herbs if available.'
                 ],
                 'Veg Fried Rice':[
-                  'Use cooked, cooled rice so the grains stay separate while frying.',
-                  'Heat a wide pan on high heat. Stir-fry garlic and onion until fragrant.',
-                  'Add chopped vegetables and cook for a few minutes while keeping them slightly crisp.',
-                  'Add rice and toss continuously so it heats evenly without sticking.',
-                  'Add soy sauce and mix thoroughly. Keep the heat high for another minute.',
-                  'Taste before adding salt because soy sauce is already salty. Serve immediately.'
+                  'Use cooked, completely cooled rice. Break up any large clumps with your fingers or a fork before starting.',
+                  'Finely chop the onion, garlic and vegetables so all the pieces cook quickly and evenly.',
+                  'Heat a wide pan or wok on high heat. Add a little oil and let it become hot before adding the vegetables.',
+                  'Add garlic and onion and stir-fry for about a minute until fragrant. Do not let the garlic burn.',
+                  'Add the harder vegetables first and stir continuously for 2–3 minutes so they stay slightly crisp.',
+                  'Add the remaining vegetables and cook for another minute or two.',
+                  'Add the cooled rice and gently toss from the bottom of the pan. Keep the heat high so the rice fries instead of becoming soggy.',
+                  'Pour in soy sauce around the sides of the hot pan and quickly mix it through the rice.',
+                  'Cook for another 1–2 minutes while tossing. Taste before adding salt because soy sauce already contains salt.',
+                  'Turn off the heat and serve immediately while the rice is hot and the vegetables are still slightly crisp.'
                 ],
                 'Paneer Sandwich':[
-                  'Chop paneer, onion and tomato into small pieces for an even filling.',
-                  'Spread the filling over bread and add cheese if using. Keep the filling away from the edges.',
-                  'Close the sandwich and lightly butter or oil the outside if desired.',
-                  'Toast on medium heat until both sides are crisp and golden.',
-                  'Check that the cheese has melted and the centre is hot, then cut and serve.'
+                  'Cut the paneer, onion and tomato into small pieces. Smaller pieces make the sandwich easier to eat and help the filling heat evenly.',
+                  'Put the chopped filling into a bowl and add the seasoning you want. Mix everything thoroughly.',
+                  'Place one slice of bread on a clean plate or board. Spread the paneer mixture over it, leaving a small gap around the edges.',
+                  'Add cheese if using. Do not pile the filling too high or it may fall out while toasting.',
+                  'Place the second slice of bread on top and press gently so the sandwich holds together.',
+                  'Lightly butter or oil the outside of the bread if desired. This helps the outside become crisp and golden.',
+                  'Heat a pan over medium heat. Place the sandwich on the pan and cook without pressing too hard.',
+                  'Toast for 2–3 minutes until the bottom is golden and crisp, then carefully flip it.',
+                  'Toast the second side until golden and make sure the centre is hot and the cheese has melted if used.',
+                  'Transfer to a plate, cut in half and serve while hot.'
                 ],
                 'Chole Masala':[
-                  'If using dried chickpeas, soak them beforehand and cook until tender. Drain before using.',
-                  'Sauté onion, ginger and garlic in oil until the onion becomes soft and lightly golden.',
-                  'Add tomato and spices. Cook until the tomato breaks down and the masala becomes thick.',
-                  'Add cooked chickpeas and stir well so they are coated in the masala.',
-                  'Add a little water and simmer on low-medium heat for 10–15 minutes, stirring occasionally.',
-                  'Taste and adjust seasoning. Serve hot with rice, roti or bread.'
+                  'If using dried chickpeas, rinse them and soak them in plenty of water beforehand. Cook them until completely tender and drain.',
+                  'Finely chop the onion, garlic, ginger and tomato so they break down easily into the masala.',
+                  'Heat oil in a pan over medium heat. Add onion, ginger and garlic and sauté until the onion becomes soft and lightly golden.',
+                  'Add the chopped tomato and cook until it becomes soft and the mixture starts to look thick.',
+                  'Add the spices and salt. Stir well and cook for 1–2 minutes so the spices become fragrant.',
+                  'Add the cooked chickpeas and mix until they are completely coated in the masala.',
+                  'Add a little water and stir. Scrape the bottom of the pan gently if any masala is sticking.',
+                  'Cover and simmer on low-medium heat for 10–15 minutes. Stir occasionally and add a little more water if needed.',
+                  'Lightly mash a few chickpeas against the side of the pan if you want a thicker gravy.',
+                  'Taste and adjust the seasoning. Serve hot with rice, roti, bread or another side of your choice.'
                 ],
                 'Masala Omelette':[
-                  'Finely chop onion, tomato and chilli so the vegetables cook quickly.',
-                  'Whisk the eggs until combined, then mix in the vegetables and seasoning.',
-                  'Heat a non-stick pan over medium heat and lightly grease it.',
-                  'Pour in the egg mixture and spread it into an even layer.',
-                  'Cook until the edges are set, then fold or flip carefully and cook until fully set.',
-                  'Slide onto a plate and serve hot.'
+                  'Wash and finely chop the onion, tomato and chilli. Keep the pieces small so they cook properly inside the omelette.',
+                  'Crack the eggs into a bowl and whisk until the yolks and whites are fully combined.',
+                  'Add the chopped vegetables, salt and other seasoning to the eggs. Mix gently so everything is evenly distributed.',
+                  'Heat a non-stick pan over medium heat and add a small amount of oil or butter.',
+                  'Pour the egg mixture into the centre of the pan and gently spread it into an even layer.',
+                  'Leave it undisturbed for about a minute while the bottom begins to set. Keep the heat at medium or medium-low.',
+                  'As the edges cook, gently lift them with a spatula so any uncooked egg can run underneath.',
+                  'Cook until the top is mostly set. Add cheese or coriander if desired before folding.',
+                  'Fold the omelette in half or carefully flip it. Cook for another 30–60 seconds until fully set.',
+                  'Slide onto a plate and serve immediately while hot.'
                 ],
                 'Paneer Power Salad':[
-                  'Wash and chop lettuce and tomatoes into bite-sized pieces. Keep them dry so the salad stays crisp.',
-                  'Cut paneer into cubes and pan-sear over medium heat until lightly golden.',
-                  'Mix curd with lemon juice and seasoning to make a simple dressing.',
-                  'Combine vegetables and warm paneer, pour over the dressing and toss gently.',
-                  'Taste and adjust lemon, salt or seasoning before serving.'
+                  'Wash the lettuce and tomatoes well and drain them. Pat them dry so the salad does not become watery.',
+                  'Cut the lettuce and tomatoes into bite-sized pieces and place them in a large bowl.',
+                  'Cut the paneer into small cubes so it is easy to eat with the salad.',
+                  'Heat a pan over medium heat and lightly sear the paneer until the outside becomes lightly golden. Turn the cubes so multiple sides brown.',
+                  'In a small bowl, mix curd, lemon juice and your chosen seasoning to make a simple creamy dressing.',
+                  'Let the warm paneer cool for a minute so it does not make the lettuce wilt immediately.',
+                  'Add the paneer to the bowl with the vegetables and gently mix everything together.',
+                  'Pour the dressing over the salad gradually rather than all at once. Toss gently until coated.',
+                  'Taste and adjust lemon juice, salt or seasoning according to your preference.',
+                  'Serve immediately for the best crunch and texture.'
                 ],
                 'Poha':[
-                  'Rinse the poha gently in a strainer until it softens slightly, then let the excess water drain.',
-                  'Sauté onion, peanuts and chilli until the onion is soft and the peanuts are lightly toasted.',
-                  'Add drained poha and seasoning. Fold gently so it does not become mushy.',
-                  'Cook on low-medium heat for a few minutes until hot throughout.',
-                  'Turn off the heat and squeeze fresh lemon over the poha.',
-                  'Serve warm, optionally topped with coriander or extra peanuts.'
+                  'Place the poha in a strainer and rinse it gently with water. Do not soak it for too long because it can become mushy.',
+                  'Let the rinsed poha drain for a few minutes. The flakes should feel soft but still hold their shape.',
+                  'Heat oil in a pan over medium heat. Add peanuts and cook until lightly toasted, then keep them in the pan.',
+                  'Add chopped onion and chilli and sauté until the onion becomes soft. Stir frequently so nothing burns.',
+                  'Add the drained poha and sprinkle in the seasoning. Mix gently using a spatula.',
+                  'Cook on low-medium heat for 2–4 minutes, folding rather than aggressively stirring so the poha stays intact.',
+                  'Check the texture. If it feels too dry, sprinkle a very small amount of water and mix gently.',
+                  'Turn off the heat once the poha is hot throughout. Squeeze fresh lemon juice over it.',
+                  'Taste and adjust salt, lemon or seasoning. Add the toasted peanuts evenly on top.',
+                  'Serve warm, optionally garnished with coriander or another topping you have available.'
                 ]
               };
               function enhance(){
@@ -167,12 +206,21 @@ class MainActivity : Activity() {
                   logo.appendChild(v);
                 }
                 const title=document.querySelector('.detailbody h1');
-                const steps=document.querySelectorAll('.detailbody .steps li p');
-                if(!title||!steps.length)return;
+                if(!title)return;
                 const list=detailed[title.textContent.trim()];
-                if(!list||steps.datasetDetailed==='1')return;
-                list.forEach((text,i)=>{if(steps[i])steps[i].textContent=text;});
-                steps.datasetDetailed='1';
+                if(!list)return;
+                const stepList=document.querySelector('.detailbody .steps');
+                if(!stepList)return;
+                if(stepList.datasetDetailedTitle===title.textContent.trim())return;
+                stepList.innerHTML='';
+                list.forEach((text,i)=>{
+                  const li=document.createElement('li');
+                  const p=document.createElement('p');
+                  p.textContent=text;
+                  li.appendChild(p);
+                  stepList.appendChild(li);
+                });
+                stepList.datasetDetailedTitle=title.textContent.trim();
               }
               enhance(); setInterval(enhance,300);
             })();
