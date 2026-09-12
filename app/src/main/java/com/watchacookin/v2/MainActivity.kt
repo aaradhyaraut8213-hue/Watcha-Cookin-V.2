@@ -25,66 +25,16 @@ class MainActivity : Activity() {
         window.statusBarColor = android.graphics.Color.WHITE
         window.navigationBarColor = android.graphics.Color.WHITE
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR or View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR
-
-        val root = FrameLayout(this)
-        webView = WebView(this)
-        root.addView(webView, FrameLayout.LayoutParams(-1, -1))
-        setContentView(root)
-
-        ViewCompat.setOnApplyWindowInsetsListener(webView) { view, insets ->
-            val bars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            view.updateLayoutParams<ViewGroup.MarginLayoutParams> {
-                topMargin = bars.top; bottomMargin = bars.bottom; leftMargin = bars.left; rightMargin = bars.right
-            }
-            insets
-        }
-
-        webView.settings.javaScriptEnabled = true
-        webView.settings.domStorageEnabled = true
-        webView.settings.allowFileAccess = true
-        webView.settings.allowContentAccess = true
-        webView.settings.cacheMode = android.webkit.WebSettings.LOAD_NO_CACHE
+        val root=FrameLayout(this); webView=WebView(this); root.addView(webView,FrameLayout.LayoutParams(-1,-1)); setContentView(root)
+        ViewCompat.setOnApplyWindowInsetsListener(webView){v,i->val b=i.getInsets(WindowInsetsCompat.Type.systemBars());v.updateLayoutParams<ViewGroup.MarginLayoutParams>{topMargin=b.top;bottomMargin=b.bottom;leftMargin=b.left;rightMargin=b.right};i}
+        webView.settings.javaScriptEnabled=true; webView.settings.domStorageEnabled=true; webView.settings.allowFileAccess=true; webView.settings.allowContentAccess=true; webView.settings.cacheMode=android.webkit.WebSettings.LOAD_NO_CACHE
         CookieManager.getInstance().setAcceptCookie(true)
-
-        webView.webViewClient = object : WebViewClient() {
-            override fun onPageFinished(view: WebView?, url: String?) {
-                super.onPageFinished(view, url)
-                injectV2Enhancements()
-            }
-        }
-        webView.webChromeClient = object : WebChromeClient() {
-            override fun onShowFileChooser(wv: WebView?, callback: ValueCallback<Array<android.net.Uri>>?, params: FileChooserParams?): Boolean {
-                filePathCallback?.onReceiveValue(null)
-                filePathCallback = callback
-                val intent = params?.createIntent() ?: return false
-                intent.putExtra(android.content.Intent.EXTRA_ALLOW_MULTIPLE, true)
-                startActivityForResult(intent, 1001)
-                return true
-            }
-        }
-
-        if (savedInstanceState == null) webView.loadUrl("file:///android_asset/index.html") else webView.restoreState(savedInstanceState)
+        webView.webViewClient=object:WebViewClient(){override fun onPageFinished(v:WebView?,u:String?){super.onPageFinished(v,u);injectV2Enhancements()}}
+        webView.webChromeClient=object:WebChromeClient(){override fun onShowFileChooser(v:WebView?,cb:ValueCallback<Array<android.net.Uri>>?,p:FileChooserParams?):Boolean{filePathCallback?.onReceiveValue(null);filePathCallback=cb;val intent=p?.createIntent()?:return false;intent.putExtra(android.content.Intent.EXTRA_ALLOW_MULTIPLE,true);startActivityForResult(intent,1001);return true}}
+        if(savedInstanceState==null)webView.loadUrl("file:///android_asset/index.html") else webView.restoreState(savedInstanceState)
     }
-
-    private fun injectV2Enhancements() {
-        try {
-            val js = assets.open("v2-enhancements.js").bufferedReader().use { it.readText() }
-            webView.evaluateJavascript("javascript:(function(){try{ $js }catch(e){console.error('V2 patch',e)}})();", null)
-        } catch (_: Exception) { }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: android.content.Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == 1001) {
-            val result = if (resultCode == RESULT_OK && data != null) {
-                val clip = data.clipData
-                if (clip != null) Array(clip.itemCount) { i -> clip.getItemAt(i).uri } else data.data?.let { arrayOf(it) }
-            } else null
-            filePathCallback?.onReceiveValue(result)
-            filePathCallback = null
-        }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) { webView.saveState(outState); super.onSaveInstanceState(outState) }
-    override fun onBackPressed() { if (webView.canGoBack()) webView.goBack() else super.onBackPressed() }
+    private fun injectV2Enhancements(){try{val js=assets.open("v2-enhancements.js").bufferedReader().use{it.readText()};webView.evaluateJavascript("(function(){try{ $js }catch(e){console.error(e)}})();",null)}catch(_:Exception){}}
+    override fun onActivityResult(r:Int,c:Int,d:android.content.Intent?){super.onActivityResult(r,c,d);if(r==1001){val x=if(c==RESULT_OK&&d!=null){val clip=d.clipData;if(clip!=null)Array(clip.itemCount){i->clip.getItemAt(i).uri}else d.data?.let{arrayOf(it)}}else null;filePathCallback?.onReceiveValue(x);filePathCallback=null}}
+    override fun onSaveInstanceState(o:Bundle){webView.saveState(o);super.onSaveInstanceState(o)}
+    override fun onBackPressed(){if(webView.canGoBack())webView.goBack()else super.onBackPressed()}
 }
