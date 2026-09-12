@@ -47,7 +47,7 @@ class MainActivity : Activity() {
         webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView?, url: String?) {
                 super.onPageFinished(view, url)
-                injectV2Enhancements()
+                webView.postDelayed({ injectV2Enhancements() }, 250)
             }
         }
         webView.webChromeClient = object : WebChromeClient() {
@@ -73,8 +73,9 @@ class MainActivity : Activity() {
 
     private fun injectV2Enhancements() {
         val script = assets.open("v2-enhancements.js").bufferedReader().use { it.readText() }
-        val escaped = script.replace("\\", "\\\\").replace("\"", "\\\"").replace("\n", "\\n").replace("\r", "")
-        webView.evaluateJavascript("javascript:(function(){eval(\"$escaped\")})()", null)
+        // evaluateJavascript accepts JavaScript directly; wrapping the script inside a
+        // quoted eval string can break on large scripts or escaped characters.
+        webView.evaluateJavascript(script, null)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
