@@ -54,7 +54,23 @@ class MainActivity : Activity() {
         webView.settings.domStorageEnabled = true
         webView.settings.allowFileAccess = true
         webView.settings.allowContentAccess = true
-        webView.webViewClient = WebViewClient()
+        webView.webViewClient = object : WebViewClient() {
+            override fun onPageFinished(view: WebView?, url: String?) {
+                super.onPageFinished(view, url)
+                view?.evaluateJavascript("""
+                    (function(){
+                      var logo=document.querySelector('.logo');
+                      if(logo && !logo.querySelector('.version-label')){
+                        var v=document.createElement('small');
+                        v.className='version-label';
+                        v.textContent='V.1';
+                        v.style.cssText='font-size:11px;color:#777;font-weight:800;margin-left:5px;vertical-align:middle;';
+                        logo.appendChild(v);
+                      }
+                    })();
+                """.trimIndent(), null)
+            }
+        }
         webView.webChromeClient = object : WebChromeClient() {
             override fun onShowFileChooser(
                 view: WebView?,
