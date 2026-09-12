@@ -2,8 +2,12 @@ package com.watchacookin.v2
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
+import android.view.View
+import android.view.Window
+import android.view.WindowInsets
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -16,8 +20,31 @@ class MainActivity : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Keep the app's bottom navigation above Android's gesture/navigation area.
+        // Android 15 enforces edge-to-edge for apps targeting API 35, so without
+        // this inset handling the WebView can extend underneath the system buttons.
+        window.navigationBarColor = Color.WHITE
+        window.statusBarColor = Color.WHITE
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
+                View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+
         webView = WebView(this)
         setContentView(webView)
+
+        webView.setOnApplyWindowInsetsListener { view, insets ->
+            val navInsets = insets.getInsets(WindowInsets.Type.navigationBars())
+            val statusInsets = insets.getInsets(WindowInsets.Type.statusBars())
+            view.setPadding(
+                view.paddingLeft,
+                statusInsets.top,
+                view.paddingRight,
+                navInsets.bottom
+            )
+            insets
+        }
+        webView.requestApplyInsets()
+
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
         webView.settings.allowFileAccess = true
