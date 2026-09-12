@@ -1,25 +1,136 @@
-(function(){
-  const recipes={
-    'Paneer Butter Masala':{ing:['Paneer — 250 g','Tomatoes — 3 medium (about 300 g)','Onion — 1 medium','Cream — 100 ml','Butter — 2 tbsp','Garlic — 4 cloves','Garam masala — 1 tsp','Salt — about 1/2 tsp, or to taste'],steps:['Wash the tomatoes and peel the onion and garlic. Chop 3 tomatoes, 1 onion and 4 garlic cloves into small pieces.','Cut 250 g paneer into medium bite-sized cubes and keep them aside.','Heat 2 tbsp butter in a pan over medium heat. Add the chopped onion and 4 garlic cloves and sauté until soft and lightly golden.','Add the 3 chopped tomatoes and cook for 5–7 minutes, stirring occasionally, until they become completely soft.','Add 1 tsp garam masala and about 1/2 tsp salt. Stir and cook for another 1–2 minutes.','Turn off the heat and let the mixture cool slightly. Blend or mash it until you get a smooth gravy.','Return the gravy to the pan. If it is very thick, add 2–4 tbsp water and bring it to a gentle simmer.','Lower the heat and slowly stir in 100 ml cream until the gravy is smooth and creamy.','Add the 250 g paneer cubes and gently coat them with the gravy. Simmer for 5–8 minutes.','Taste and adjust salt or garam masala. Garnish if available and serve hot. Serves about 2.']},
-    'Paneer Tikka':{ing:['Paneer — 250 g','Curd — 120 g (1/2 cup)','Capsicum — 1 medium','Onion — 1 medium','Chilli powder — 1 tsp','Garam masala — 1 tsp','Salt — about 1/2 tsp'],steps:['Cut 250 g paneer into medium cubes. Cut 1 capsicum and 1 onion into pieces roughly the same size.','In a bowl, mix 120 g curd, 1 tsp chilli powder, 1 tsp garam masala and about 1/2 tsp salt.','Add the paneer, capsicum and onion to the marinade and gently toss until every piece is coated.','Let the coated pieces rest for 10–15 minutes so the marinade sticks and the flavours develop.','Heat a non-stick pan or grill over medium-high heat. Lightly grease it if needed.','Place the pieces in a single layer. Do not overcrowd the pan because they should brown instead of steam.','Cook for 2–3 minutes on one side, then turn the pieces with tongs or a spatula.','Continue turning until 250 g paneer is hot and the vegetables have light brown or charred spots.','Lower the heat if the marinade is browning too quickly. The vegetables should be cooked but still slightly crisp.','Transfer to a plate. Add lemon or coriander if available and serve immediately. Serves about 2.']},
-    'Creamy Tomato Pasta':{ing:['Pasta — 200 g','Tomatoes — 2 medium','Garlic — 3 cloves','Cream — 120 ml (1/2 cup)','Cheese — 50 g (about 1/2 cup grated)','Salt — about 1 tsp for pasta water, plus to taste'],steps:['Bring a large pot of water to a boil and add about 1 tsp salt.','Add 200 g pasta and cook according to the packet instructions until tender but not mushy.','Before draining, save about 1/2 cup pasta water. Drain the pasta and keep it aside.','Heat a pan over medium heat and add 1 tsp oil or a little butter. Add 3 chopped garlic cloves and cook until fragrant.','Add 2 chopped tomatoes and cook for 5–7 minutes until soft and saucy.','Add seasoning to taste and stir for another minute so the flavours combine.','Lower the heat and slowly add 120 ml cream while stirring continuously.','Add 50 g grated cheese and stir until melted. Add 2–4 tbsp reserved pasta water if the sauce is too thick.','Add the 200 g drained pasta and toss until every piece is coated. Cook together for 1–2 minutes.','Taste and adjust salt and seasoning. Serve hot with extra cheese if available. Serves about 2.']},
-    'Veg Fried Rice':{ing:['Cooked rice — 3 cups (about 450 g)','Carrot — 1 medium','Peas — 1/2 cup','Onion — 1 medium','Soy sauce — 1 1/2 tbsp','Garlic — 3 cloves','Oil — 1 tbsp'],steps:['Use 3 cups (about 450 g) cooked, completely cooled rice. Break up any large clumps with a fork.','Finely chop 1 onion, 1 carrot and 3 garlic cloves. Keep 1/2 cup peas ready.','Heat a wide pan or wok on high heat and add 1 tbsp oil. Let it become hot before adding the vegetables.','Add 3 chopped garlic cloves and 1 chopped onion. Stir-fry for about 1 minute without burning the garlic.','Add 1 chopped carrot and 1/2 cup peas. Stir-fry for 2–3 minutes so the vegetables stay slightly crisp.','Add the 3 cups cooled rice and gently toss from the bottom of the pan. Keep the heat high.','Pour 1 1/2 tbsp soy sauce around the sides of the hot pan and quickly mix it through the rice.','Toss and cook for another 1–2 minutes until the rice is evenly seasoned and hot.','Taste before adding salt because soy sauce is already salty. Add a little only if needed.','Turn off the heat and serve immediately. Serves about 2.']},
-    'Paneer Sandwich':{ing:['Bread — 4 slices','Paneer — 150 g','Onion — 1/2 medium','Tomato — 1/2 medium','Cheese — 2 slices (about 40 g)','Butter/oil — 1 tsp, optional'],steps:['Cut 150 g paneer, 1/2 onion and 1/2 tomato into small pieces so the filling heats evenly.','Put the filling in a bowl and mix with your preferred seasoning until everything is evenly coated.','Place 1 slice of bread on a plate and spread half the filling over it, leaving a small gap around the edges.','Add 1 cheese slice. Repeat with another bread slice to make the second sandwich.','Close both sandwiches and press gently so the filling stays inside.','Lightly spread about 1/2 tsp butter or oil on the outside of each sandwich if desired.','Heat a pan over medium heat and place the sandwiches on it. Do not press too hard.','Toast for 2–3 minutes until the bottom is golden and crisp, then carefully flip.','Toast the second side until golden and make sure the centre is hot and the 40 g cheese has melted.','Transfer to a plate, cut in half and serve hot. Makes 2 sandwiches.']},
-    'Chole Masala':{ing:['Cooked chickpeas — 1 1/2 cups (about 250 g)','Tomatoes — 2 medium','Onion — 1 medium','Garlic — 4 cloves','Ginger — 1 inch piece','Spices — 2 tsp total, adjust to taste','Oil — 1 tbsp','Salt — about 1/2 tsp, or to taste'],steps:['If using dried chickpeas, soak them beforehand and cook until completely tender. Measure about 1 1/2 cups cooked chickpeas (250 g).','Finely chop 1 onion, 2 tomatoes, 4 garlic cloves and a 1-inch piece of ginger.','Heat 1 tbsp oil in a pan over medium heat. Add onion, ginger and garlic and sauté until the onion is soft and lightly golden.','Add the 2 chopped tomatoes and cook until they become soft and the mixture starts to look thick.','Add about 2 tsp spices and 1/2 tsp salt. Stir and cook for 1–2 minutes so the spices become fragrant.','Add the 1 1/2 cups cooked chickpeas and mix until every chickpea is coated in the masala.','Add about 1/2 cup water and stir. Add a little more later if you want a thinner gravy.','Cover and simmer on low-medium heat for 10–15 minutes, stirring occasionally.','Mash a few chickpeas against the side of the pan if you want a thicker gravy, then taste and adjust salt.','Serve hot with rice, roti or bread. This quantity makes about 2 servings.']},
-    'Masala Omelette':{ing:['Eggs — 2','Onion — 1/4 medium','Tomato — 1/2 medium','Green chilli — 1','Oil/butter — 1 tsp','Salt — 1/4 tsp, or to taste'],steps:['Finely chop 1/4 onion, 1/2 tomato and 1 green chilli so the vegetables cook quickly.','Crack 2 eggs into a bowl and whisk until the yolks and whites are fully combined.','Add the chopped vegetables, 1/4 tsp salt and your preferred spices. Mix gently.','Heat a non-stick pan over medium heat and add about 1 tsp oil or butter.','Pour the 2-egg mixture into the centre and gently spread it into an even layer.','Leave it for about 1 minute while the bottom starts to set. Keep the heat medium-low if it browns quickly.','Lift the edges gently with a spatula so any uncooked egg can run underneath.','Cook until the top is mostly set. Add cheese or coriander if desired before folding.','Fold the omelette in half or carefully flip it and cook another 30–60 seconds until fully set.','Slide onto a plate and serve immediately while hot. Makes 1 large omelette.']},
-    'Paneer Power Salad':{ing:['Paneer — 150 g','Lettuce — 2 cups','Tomato — 1 medium','Curd — 1/2 cup (120 g)','Lemon juice — 1 tbsp','Salt/seasoning — to taste'],steps:['Wash 2 cups lettuce and 1 tomato well and drain them. Pat them dry so the salad stays crisp.','Cut the lettuce and tomato into bite-sized pieces and place them in a large bowl.','Cut 150 g paneer into small cubes so it is easy to eat with the salad.','Heat a pan over medium heat and lightly sear the paneer until the outside becomes golden, turning the cubes as needed.','In a small bowl, mix 1/2 cup (120 g) curd with 1 tbsp lemon juice and seasoning to make the dressing.','Let the warm paneer cool for about 1 minute so it does not wilt the lettuce immediately.','Add the 150 g paneer to the vegetables and gently mix everything together.','Pour the dressing over gradually and toss gently until the salad is evenly coated.','Taste and adjust lemon juice, salt or seasoning according to preference.','Serve immediately for the best crunch. Makes about 2 light servings.']},
-    'Poha':{ing:['Poha — 2 cups (about 180 g)','Onion — 1 medium','Peanuts — 1/3 cup','Lemon — 1/2','Green chilli — 1','Oil — 1 tbsp','Salt — about 1/2 tsp, or to taste'],steps:['Measure 2 cups (about 180 g) poha. Place it in a strainer and rinse gently with water.','Let the poha drain for a few minutes. It should be soft but still hold its shape, not turn mushy.','Heat 1 tbsp oil in a pan over medium heat. Add 1/3 cup peanuts and toast them lightly.','Add 1 chopped onion and 1 chopped green chilli. Sauté until the onion becomes soft.','Add the drained 2 cups poha and about 1/2 tsp salt. Mix gently using a spatula.','Cook on low-medium heat for 2–4 minutes, folding rather than aggressively stirring.','If the poha feels too dry, sprinkle 1–2 tbsp water and mix gently.','Turn off the heat once everything is hot. Squeeze the juice of 1/2 lemon over the poha.','Taste and adjust salt or lemon. Add the toasted peanuts evenly on top.','Serve warm, optionally garnished with coriander. Makes about 2 servings.']}
+(() => {
+  'use strict';
+
+  const RECIPES = {
+    'Paneer Butter Masala': {
+      ingredients: [
+        ['Paneer', '250 g'], ['Tomatoes', '3 medium'], ['Onion', '1 medium'],
+        ['Cream', '100 ml'], ['Butter', '2 tbsp'], ['Garlic', '4 cloves'],
+        ['Ginger', '1 inch'], ['Garam masala', '1 tsp'], ['Chilli powder', '1 tsp'],
+        ['Kasuri methi', '1 tsp'], ['Salt', '¾ tsp']
+      ],
+      steps: [
+        'Finely chop the onion, tomatoes, ginger and garlic.',
+        'Cut 250 g paneer into bite-size cubes. Keep it aside.',
+        'Heat 2 tbsp butter in a pan over medium heat and sauté the onion until soft.',
+        'Add ginger and garlic; cook for about 1 minute until fragrant.',
+        'Add the tomatoes, chilli powder and salt. Cook until the tomatoes become soft.',
+        'Blend the cooked mixture until smooth, then return the sauce to the pan.',
+        'Add a little water if needed and simmer the sauce for 3–4 minutes.',
+        'Stir in 100 ml cream, garam masala and kasuri methi.',
+        'Add the paneer and gently simmer for 5–8 minutes so it absorbs the sauce.',
+        'Taste, adjust salt and garam masala, then serve hot with roti or rice.'
+      ]
+    },
+    'Paneer Tikka': {
+      ingredients: [['Paneer','250 g'],['Curd','120 g'],['Capsicum','1'],['Onion','1'],['Chilli powder','1 tsp'],['Garam masala','1 tsp'],['Turmeric','½ tsp'],['Lemon juice','1 tbsp'],['Oil','1 tbsp'],['Salt','¾ tsp']],
+      steps: ['Cut paneer, capsicum and onion into similar bite-size pieces.','Whisk curd until smooth and add chilli powder, garam masala, turmeric and salt.','Mix in lemon juice and oil to make the marinade.','Add paneer, capsicum and onion and coat everything evenly.','Cover and marinate for at least 20 minutes.','Thread the paneer and vegetables onto skewers or place them on a lined tray.','Cook in a hot oven, air fryer or pan until the edges are lightly charred.','Turn the pieces during cooking so they brown evenly.','Brush with a little oil if the pieces look dry.','Serve hot with lemon wedges and your preferred chutney.']
+    },
+    'Creamy Tomato Pasta': {
+      ingredients: [['Pasta','200 g'],['Tomatoes','2 medium'],['Garlic','3 cloves'],['Cream','120 ml'],['Cheese','50 g'],['Butter','1 tbsp'],['Chilli flakes','½ tsp'],['Italian seasoning','1 tsp'],['Salt','¾ tsp']],
+      steps: ['Bring a large pot of salted water to a boil.','Cook 200 g pasta until al dente, then reserve about ½ cup pasta water and drain.','Finely chop the garlic and tomatoes.','Melt 1 tbsp butter in a pan over medium heat.','Add garlic and cook for about 30 seconds without browning it.','Add tomatoes, chilli flakes, Italian seasoning and salt; cook until the tomatoes soften.','Blend or mash the tomato mixture until you have a smooth sauce.','Lower the heat and stir in 120 ml cream.','Add 50 g cheese and a splash of reserved pasta water; stir until smooth.','Toss in the cooked pasta, coat well and serve hot with extra cheese if desired.']
+    },
+    'Veg Fried Rice': {
+      ingredients: [['Cooked rice','3 cups'],['Carrot','1'],['Peas','½ cup'],['Onion','1'],['Soy sauce','1½ tbsp'],['Garlic','3 cloves'],['Oil','1 tbsp'],['Salt','½ tsp']],
+      steps: ['Cook the rice beforehand and let it cool so the grains stay separate.','Finely chop the onion, carrot and garlic.','Heat 1 tbsp oil in a large wok or pan over high heat.','Add onion and garlic and stir-fry for about 1 minute.','Add carrot and peas and cook until the vegetables are just tender.','Add the cooled cooked rice and toss everything together.','Pour 1½ tbsp soy sauce around the hot pan and mix well.','Stir-fry for 2–3 minutes without crushing the rice grains.','Taste and add salt only if needed because soy sauce is already salty.','Serve immediately while hot.']
+    },
+    'Paneer Sandwich': {
+      ingredients: [['Bread','4 slices'],['Paneer','150 g'],['Onion','½'],['Tomato','½'],['Cheese','2 slices (40 g)'],['Butter/oil','1 tsp'],['Salt','¼ tsp']],
+      steps: ['Crumble 150 g paneer into a bowl.','Finely chop the onion and tomato.','Mix paneer with onion, tomato and salt.','Spread the paneer filling evenly over two bread slices.','Place a cheese slice over each filling.','Cover with the remaining bread slices.','Heat a pan or sandwich maker and lightly grease it with butter or oil.','Toast the sandwiches until both sides are golden and crisp.','Press gently so the cheese melts without crushing the filling.','Cut in half and serve hot.']
+    },
+    'Chole Masala': {
+      ingredients: [['Cooked chickpeas','1½ cups (250 g)'],['Tomatoes','2'],['Onion','1'],['Garlic','4 cloves'],['Ginger','1 inch'],['Spices','2 tsp'],['Oil','1 tbsp'],['Salt','¾ tsp']],
+      steps: ['Drain and rinse the cooked chickpeas.','Finely chop the onion, tomatoes, ginger and garlic.','Heat 1 tbsp oil in a pan.','Sauté onion until golden and soft.','Add ginger and garlic and cook for 1 minute.','Add tomatoes, salt and the spices; cook until the tomatoes break down.','Mash a small portion of the chickpeas to help thicken the gravy.','Add all chickpeas and enough water to reach your preferred consistency.','Simmer for 10–15 minutes, stirring occasionally.','Taste and adjust seasoning before serving with rice, roti or bhatura.']
+    },
+    'Masala Omelette': {
+      ingredients: [['Eggs','2'],['Onion','¼'],['Tomato','½'],['Green chilli','1'],['Oil/butter','1 tsp'],['Salt','¼ tsp']],
+      steps: ['Finely chop the onion, tomato and green chilli.','Crack 2 eggs into a bowl.','Add the chopped vegetables and salt.','Beat the mixture until the eggs are well combined.','Heat 1 tsp oil or butter in a non-stick pan over medium heat.','Pour in the egg mixture and spread it evenly.','Let the bottom set for 1–2 minutes.','Fold or flip the omelette carefully.','Cook the second side until fully set.','Slide onto a plate and serve immediately.']
+    },
+    'Paneer Power Salad': {
+      ingredients: [['Paneer','150 g'],['Lettuce','2 cups'],['Tomato','1'],['Curd','½ cup (120 g)'],['Lemon juice','1 tbsp'],['Salt','¼ tsp']],
+      steps: ['Wash and dry the lettuce and tomato.','Cut the paneer into bite-size cubes.','Chop the tomato and tear the lettuce into smaller pieces.','Whisk ½ cup curd with lemon juice and salt.','Add the lettuce and tomato to a large bowl.','Add the paneer cubes.','Pour over the curd dressing.','Toss gently so the paneer stays intact.','Taste and adjust lemon juice or salt.','Serve immediately while fresh and chilled.']
+    },
+    'Poha': {
+      ingredients: [['Poha','2 cups (180 g)'],['Onion','1'],['Peanuts','⅓ cup'],['Lemon','½'],['Green chilli','1'],['Oil','1 tbsp'],['Salt','½ tsp']],
+      steps: ['Rinse 2 cups poha quickly under water and drain well.','Let the poha rest for 5–10 minutes so it softens.','Finely chop the onion and green chilli.','Heat 1 tbsp oil in a pan and roast the peanuts until lightly browned.','Add onion and green chilli and sauté until the onion softens.','Add the softened poha and salt.','Mix gently so the poha does not turn mushy.','Cover and cook on low heat for 2–3 minutes.','Squeeze the juice of ½ lemon over the poha and mix.','Serve hot, optionally topped with fresh coriander.']
+    }
   };
-  function enhance(){
-    const logo=document.querySelector('.logo');
-    if(logo&&!logo.querySelector('.version-label')){const v=document.createElement('small');v.className='version-label';v.textContent='V.1';v.style.cssText='font-size:10px;color:#777;font-weight:800;margin-left:5px;vertical-align:middle;';logo.appendChild(v);}
-    const title=document.querySelector('.detailbody h1'); if(!title)return;
-    const name=title.textContent.trim(),r=recipes[name]; if(!r)return;
-    const body=document.querySelector('.detailbody'),steps=document.querySelector('.detailbody .steps'); if(!body||!steps)return;
-    if(steps.dataset.v2Title===name)return;
-    let box=body.querySelector('.v2-ingredients');
-    if(!box){box=document.createElement('section');box.className='v2-ingredients';box.style.cssText='margin:18px 0 26px;padding:16px 18px;border:1px solid #e5ded3;border-radius:16px;background:#faf8f4;';const h=document.createElement('h2');h.textContent='Ingredients • serves 2';h.style.cssText='margin:0 0 10px;font-size:22px;';const ul=document.createElement('ul');ul.style.cssText='margin:0;padding-left:22px;';r.ing.forEach(x=>{const li=document.createElement('li');li.textContent=x;li.style.cssText='margin:7px 0;';ul.appendChild(li);});box.append(h,ul);body.insertBefore(box,steps);}
-    steps.innerHTML='';r.steps.forEach(text=>{const li=document.createElement('li');const p=document.createElement('p');p.textContent=text;p.style.margin='0';li.appendChild(p);steps.appendChild(li);});steps.dataset.v2Title=name;
+
+  function clean(s) { return (s || '').replace(/\s+/g, ' ').trim(); }
+
+  function findRecipe() {
+    const titleEl = document.querySelector('.detailbody h1, .detailbody h2, .detailbody .detailtitle, .detailbody .title');
+    const title = clean(titleEl && titleEl.textContent);
+    for (const key of Object.keys(RECIPES)) {
+      if (title.toLowerCase().includes(key.toLowerCase()) || key.toLowerCase().includes(title.toLowerCase())) return [key, RECIPES[key]];
+    }
+    const body = clean(document.body.textContent).toLowerCase();
+    for (const key of Object.keys(RECIPES)) if (body.includes(key.toLowerCase())) return [key, RECIPES[key]];
+    return null;
   }
-  enhance();setInterval(enhance,300);
+
+  function replaceDetails() {
+    const found = findRecipe();
+    if (!found) return;
+    const data = found[1];
+    const root = document.querySelector('.detailbody') || document.querySelector('.recipe-detail') || document.body;
+    if (!root) return;
+
+    // Stop repeated execution from rebuilding the same DOM forever.
+    const signature = found[0] + '|' + data.steps.join('|');
+    if (root.dataset.wcV2Signature === signature) return;
+
+    let steps = root.querySelector('.steps');
+    if (!steps) {
+      const headings = Array.from(root.querySelectorAll('h2,h3,h4,strong')).filter(e => clean(e.textContent).toLowerCase() === 'steps');
+      if (headings.length) steps = headings[0].parentElement;
+    }
+    if (!steps) return;
+
+    // Replace the old short ordered list with the full V2 10-step list.
+    const oldOl = steps.tagName.toLowerCase() === 'ol' ? steps : steps.querySelector('ol');
+    if (oldOl) {
+      oldOl.innerHTML = data.steps.map(s => '<li>' + s + '</li>').join('');
+    } else {
+      const ol = document.createElement('ol');
+      ol.innerHTML = data.steps.map(s => '<li>' + s + '</li>').join('');
+      steps.appendChild(ol);
+    }
+
+    // Find the ingredient section and append quantities without destroying the app's +list buttons.
+    const headings = Array.from(root.querySelectorAll('h2,h3,h4,strong')).find(e => clean(e.textContent).toLowerCase().startsWith('ingredients'));
+    if (headings && !root.querySelector('[data-wc-quantities]')) {
+      const box = document.createElement('div');
+      box.dataset.wcQuantities = '1';
+      box.style.margin = '12px 0 18px';
+      box.innerHTML = data.ingredients.map(([name, qty]) => `<div style="display:flex;justify-content:space-between;gap:12px;padding:7px 0;font-size:14px"><span>${name}</span><strong>${qty}</strong></div>`).join('');
+      headings.parentElement.insertBefore(box, headings.nextSibling);
+    }
+
+    root.dataset.wcV2Signature = signature;
+  }
+
+  function addV1Label() {
+    const logo = document.querySelector('.logo');
+    if (logo && !logo.querySelector('[data-wc-v1]')) {
+      const span = document.createElement('span');
+      span.dataset.wcV1 = '1';
+      span.textContent = ' V.1';
+      span.style.fontSize = '10px';
+      span.style.marginLeft = '3px';
+      span.style.opacity = '.65';
+      logo.appendChild(span);
+    }
+  }
+
+  function run() {
+    addV1Label();
+    replaceDetails();
+  }
+
+  run();
+  document.addEventListener('click', () => setTimeout(run, 50));
+  document.addEventListener('DOMContentLoaded', run);
+  let ticks = 0;
+  const timer = setInterval(() => { run(); if (++ticks > 40) clearInterval(timer); }, 250);
 })();
