@@ -6,12 +6,12 @@ import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.view.WindowInsets
 import android.webkit.ValueCallback
 import android.webkit.WebChromeClient
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.FrameLayout
 
 class MainActivity : Activity() {
     private lateinit var webView: WebView
@@ -21,29 +21,34 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Keep the app's bottom navigation above Android's gesture/navigation area.
-        // Android 15 enforces edge-to-edge for apps targeting API 35, so without
-        // this inset handling the WebView can extend underneath the system buttons.
+        // Android 15 uses edge-to-edge for apps targeting API 35. Put the WebView
+        // inside the system-bar insets so fixed HTML controls cannot sit underneath
+        // Android's Home/Back/gesture navigation area.
         window.navigationBarColor = Color.WHITE
         window.statusBarColor = Color.WHITE
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR or
                 View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
 
         webView = WebView(this)
-        setContentView(webView)
+        val root = FrameLayout(this)
+        root.setBackgroundColor(Color.WHITE)
+        root.addView(webView, FrameLayout.LayoutParams(
+            FrameLayout.LayoutParams.MATCH_PARENT,
+            FrameLayout.LayoutParams.MATCH_PARENT
+        ))
+        setContentView(root)
 
-        webView.setOnApplyWindowInsetsListener { view, insets ->
-            val navInsets = insets.getInsets(WindowInsets.Type.navigationBars())
-            val statusInsets = insets.getInsets(WindowInsets.Type.statusBars())
-            view.setPadding(
-                view.paddingLeft,
-                statusInsets.top,
-                view.paddingRight,
-                navInsets.bottom
+        root.setOnApplyWindowInsetsListener { _, insets ->
+            val systemInsets = insets.getInsets(
+                WindowInsets.Type.statusBars() or WindowInsets.Type.navigationBars()
             )
+            val lp = webView.layoutParams as FrameLayout.LayoutParams
+            lp.topMargin = systemInsets.top
+            lp.bottomMargin = systemInsets.bottom
+            webView.layoutParams = lp
             insets
         }
-        webView.requestApplyInsets()
+        root.requestApplyInsets()
 
         webView.settings.javaScriptEnabled = true
         webView.settings.domStorageEnabled = true
@@ -51,7 +56,11 @@ class MainActivity : Activity() {
         webView.settings.allowContentAccess = true
         webView.webViewClient = WebViewClient()
         webView.webChromeClient = object : WebChromeClient() {
-            override fun onShowFileChooser(view: WebView?, callback: ValueCallback<Array<Uri>>?, params: FileChooserParams?): Boolean {
+            override fun onShowFileChooser(
+                view: WebView?,
+                callback: ValueCallback<Array<Uri>>?,
+                params: FileChooserParams?
+            ): Boolean {
                 fileCallback?.onReceiveValue(null)
                 fileCallback = callback
                 val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
@@ -60,7 +69,10 @@ class MainActivity : Activity() {
                     putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true)
                 }
                 return try {
-                    startActivityForResult(Intent.createChooser(intent, "Choose ingredient photos"), chooserRequest)
+                    startActivityForResult(
+                        Intent.createChooser(intent, "Choose ingredient photos"),
+                        chooserRequest
+                    )
                     true
                 } catch (_: Exception) {
                     fileCallback = null
@@ -68,7 +80,11 @@ class MainActivity : Activity() {
                 }
             }
         }
-        if (savedInstanceState == null) webView.loadUrl("file:///android_asset/index.html") else webView.restoreState(savedInstanceState)
+        if (savedInstanceState == null) {
+            webView.loadUrl("file:///android_asset/index.html")
+        } else {
+            webView.restoreState(savedInstanceState)
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
